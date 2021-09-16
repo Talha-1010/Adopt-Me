@@ -31,11 +31,15 @@ const SearchParams = () => {
     
     return(
         <div className="search-params">
-            <form>
+            <form onSubmit={e =>{
+                e.preventDefault();
+                requestPets();
+            }}>
                 <label htmlFor="location">
                     Location
                     <input id="location" 
                     //onChange={(e)=> setLocation(e.target.value)}
+                    onCut={console.log}
                     onChange={updateLocation} 
                     value={location} 
                     placeholder="Location"/>
